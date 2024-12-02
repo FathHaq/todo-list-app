@@ -1,0 +1,24 @@
+name: 🚀 Todo List APP
+
+on:
+  push:
+    branches: [ main ]
+
+jobs:
+  web-deploy:
+    name: 🎉 Deploy My Web
+    runs-on: ubuntu-latest
+    steps:
+    - name: 🚚 Get latest code
+      uses: actions/checkout@v2
+    
+    - name: 📂 Sync files
+      uses: SamKirkland/FTP-Deploy-Action@v4.3.5
+      with:
+        server: 103.76.129.70 
+        username: baru@ppdb.info
+        password: idnmantab
+        exclude: |
+          **/.git*
+          **/.git*/**
+          **/node_modules/**
